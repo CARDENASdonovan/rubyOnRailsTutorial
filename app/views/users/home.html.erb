@@ -1,0 +1,22 @@
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+
+<br>
+
+<%= link_to "Accueil User", root_path %>
+
+<br><br>
+
+<%= link_to 'Retour', :back %>
+
+<br><br>
+
+<span>Compte connecté: <strong><%= current_user.email %></strong></span>
+
+<br>
+
+<h1>Articles</h1>
+
+<%= link_to "Mes articles", articles_path %>
+<br><br>
+
+<%= link_to "New Article", new_article_path %>

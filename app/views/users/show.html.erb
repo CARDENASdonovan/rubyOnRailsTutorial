@@ -1,0 +1,13 @@
+<% if admin_signed_in? %>
+    <%= button_to "Sign out", destroy_admin_session_path, method: :delete %>
+
+    <br>
+
+    <%= link_to 'Accueil Admin', root_path %>
+    
+    <br><br>
+
+    <%= link_to 'Retour', :back %>
+<% end %>
+
+<h1><%= @user.email %></h1>

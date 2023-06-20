@@ -1,0 +1,19 @@
+<%= button_to "Sign out", destroy_admin_session_path, method: :delete %>
+
+<br>
+
+<%= link_to "Accueil Admin", root_path %>
+
+<br><br>
+
+<%= link_to 'Retour', :back %>
+
+<h3>Admins existants</h3>
+
+<ul>
+  <% @admins.each do |admin| %>
+    <li>
+      <%= link_to admin.email, admin %>
+    </li>
+  <% end %>
+</ul>

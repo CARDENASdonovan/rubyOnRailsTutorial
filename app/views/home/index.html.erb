@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+    <div> Espace User </div>
+    <% helper_redirect users_home_path %>
+
+<% elsif admin_signed_in? %>
+    <div> Espace Admin </div>
+    <% helper_redirect admins_home_path %>
+
+<% else %>
+    <%= button_to "Connexion User", new_user_session_path %>  
+    <%= button_to "Connexion Admin", new_admin_session_path %>  
+<% end %>

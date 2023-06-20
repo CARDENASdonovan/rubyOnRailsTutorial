@@ -1,3 +1,38 @@
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+
+<br>
+
+<%= link_to "Accueil User", root_path %>
+
+<br><br>
+
+<%= link_to 'Retour', :back %>
+
 <h1>New Article</h1>
 
-<%= render "form", article: @article %>
+<%= form_for :article, url: articles_path do |form| %>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% @article.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+
+    </div>
+
+    <br>
+
+    <div>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+        <% @article.errors.full_messages_for(:body).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <br>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

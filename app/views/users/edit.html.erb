@@ -1,0 +1,23 @@
+<% if admin_signed_in? %>
+    <%= button_to "Sign out", destroy_admin_session_path, method: :delete %>
+
+    <br>
+    
+    <%= link_to "Accueil Admin", root_path %>
+    
+    <br><br>
+
+    <%= link_to 'Retour', :back %>
+
+    <h1>Modification de: <%= @user.email %></h1>
+
+    <span>Compte admin actif actuel: <strong><%= current_admin.email %></strong></span>
+
+    <br><br>
+
+    <%= form_with model: @user do |form| %>
+        <%= form.label "Entrez le nouvel email" %><br>
+        <%= form.text_area :email %><br>
+        <%= form.submit "Modify email" %>
+    <% end %>
+<% end %>
