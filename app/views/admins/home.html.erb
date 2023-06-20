@@ -1,0 +1,21 @@
+<%= button_to "Sign out", destroy_admin_session_path, method: :delete %>
+
+<br>
+
+<%= link_to "Accueil Admin", root_path %>
+
+<br><br>
+
+<%= link_to 'Retour', :back %>
+
+<h1> Espace Admin</h1>
+<span> Bonjour à l'espace administrateur: <span>
+<strong><%= current_admin.email %></strong>
+
+<br><br>
+
+<%= link_to "Admin Index", admins_path %>
+
+<br><br>
+
+<%= link_to "Manage Users", admins_manage_users_path %>
